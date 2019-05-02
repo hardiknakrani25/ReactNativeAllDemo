@@ -20,6 +20,8 @@ import Animation from "./src/Animation/App";
 import PropertyFinder from "./src/PropertyFinder/navigator/navigator";
 import Reg from "./src/LoginReg/navigator/navigation";
 import Todo from "./src/Todo/App";
+import ImageSlider from "./src/ImageSlider/app";
+import Redux from "./src/Redux/App";
 class MyHomeScreen extends React.Component {
   render() {
     return (
@@ -82,6 +84,19 @@ class MyHomeScreen extends React.Component {
             >
               <Text>Todo</Text>
             </Button>
+            <Button
+              style={{ marginTop: 10, width: 150, justifyContent: "center" }}
+              onPress={() => this.props.navigation.navigate("Image Slider")}
+            >
+              <Text>Image Slider</Text>
+            </Button>
+
+            <Button
+              style={{ marginTop: 10, width: 150, justifyContent: "center" }}
+              onPress={() => this.props.navigation.navigate("Redux")}
+            >
+              <Text>Redux</Text>
+            </Button>
           </View>
         </Content>
       </Container>
@@ -95,7 +110,9 @@ const MyDrawerNavigator = createDrawerNavigator({
   Animation,
   "Property Finder": PropertyFinder,
   Reg,
-  Todo
+  Todo,
+  "Image Slider": ImageSlider,
+  Redux
 });
 
 const MyApp = createAppContainer(MyDrawerNavigator);
