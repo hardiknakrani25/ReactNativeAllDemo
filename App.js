@@ -17,6 +17,7 @@ import {
 //import Apps
 import Instagram from "./src/Instagram/App";
 import Animation from "./src/Animation/App";
+import PropertyFinder from "./src/PropertyFinder/navigator/navigator";
 class MyHomeScreen extends React.Component {
   render() {
     return (
@@ -47,6 +48,13 @@ class MyHomeScreen extends React.Component {
 
             <Button
               style={{ marginTop: 10 }}
+              onPress={() => this.props.navigation.navigate("Property Finder")}
+            >
+              <Text>Property Finder</Text>
+            </Button>
+
+            <Button
+              style={{ marginTop: 10 }}
               onPress={() => this.props.navigation.navigate("Animation")}
             >
               <Text>Animation</Text>
@@ -61,7 +69,8 @@ class MyHomeScreen extends React.Component {
 const MyDrawerNavigator = createDrawerNavigator({
   Home: MyHomeScreen,
   Instagram,
-  Animation
+  Animation,
+  "Property Finder": PropertyFinder
 });
 
 const MyApp = createAppContainer(MyDrawerNavigator);
