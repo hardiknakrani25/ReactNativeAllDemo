@@ -80,7 +80,9 @@ export default class SearchPage extends React.Component {
       <ActivityIndicator size="large" />
     ) : null;
     return (
-      <SafeAreaView style={styles.conatiner}>
+      <SafeAreaView
+        style={[styles.conatiner, { backgroundColor: "#E5F4E3", flex: 1 }]}
+      >
         <Text style={styles.description}>Search house to buy!</Text>
         <Text style={styles.description}>Search by place-name Of UK</Text>
         <View style={styles.flowRight}>
