@@ -19,6 +19,7 @@ import Instagram from "./src/Instagram/App";
 import Animation from "./src/Animation/App";
 import PropertyFinder from "./src/PropertyFinder/navigator/navigator";
 import Reg from "./src/LoginReg/navigator/navigation";
+import Todo from "./src/Todo/App";
 class MyHomeScreen extends React.Component {
   render() {
     return (
@@ -74,6 +75,13 @@ class MyHomeScreen extends React.Component {
             >
               <Text>Reg</Text>
             </Button>
+
+            <Button
+              style={{ marginTop: 10, width: 150, justifyContent: "center" }}
+              onPress={() => this.props.navigation.navigate("Todo")}
+            >
+              <Text>Todo</Text>
+            </Button>
           </View>
         </Content>
       </Container>
@@ -86,7 +94,8 @@ const MyDrawerNavigator = createDrawerNavigator({
   Instagram,
   Animation,
   "Property Finder": PropertyFinder,
-  Reg
+  Reg,
+  Todo
 });
 
 const MyApp = createAppContainer(MyDrawerNavigator);
