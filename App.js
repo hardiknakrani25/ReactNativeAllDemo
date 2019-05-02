@@ -10,14 +10,17 @@ import {
   Icon,
   Text,
   Body,
-  Title
+  Title,
+  Content
 } from "native-base";
+
+import Instagram from "./src/Instagram/App";
 
 class MyHomeScreen extends React.Component {
   render() {
     return (
-      <Container>
-        <Header style={{ backgroundColor: "red" }}>
+      <Container style={{ flex: 1 }}>
+        <Header style={{ backgroundColor: "#0076ff" }}>
           <Left style={{ flexDirection: "row" }}>
             <Icon
               onPress={() => this.props.navigation.openDrawer()}
@@ -26,37 +29,49 @@ class MyHomeScreen extends React.Component {
             />
           </Left>
           <Body>
-            <Title>Header</Title>
+            <Title style={{ color: "white" }}>Apps</Title>
           </Body>
           <Right />
         </Header>
-        <View style={{ marginTop: 100, marginLeft: 100 }}>
-          <Button
-            onPress={() => this.props.navigation.navigate("Notifications")}
+        <Content>
+          <View
+            style={{
+              marginTop: 20,
+              alignSelf: "center"
+            }}
           >
-            <Text>Go to notifications</Text>
-          </Button>
-        </View>
+            <Button onPress={() => this.props.navigation.navigate("Instagram")}>
+              <Text>Instagram</Text>
+            </Button>
+
+            <Button
+              style={{ marginTop: 10 }}
+              onPress={() => this.props.navigation.navigate("Instagram")}
+            >
+              <Text>Instagram</Text>
+            </Button>
+          </View>
+        </Content>
       </Container>
     );
   }
-} // End of MyHomeScreen class
+}
 
-class MyNotificationsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ marginTop: 100, marginLeft: 100 }}>
-        <Button onPress={() => this.props.navigation.goBack()}>
-          <Text>Go back home</Text>
-        </Button>
-      </View>
-    );
-  }
-} //End of MyNotificationsScreen class
+// class MyNotificationsScreen extends React.Component {
+//   render() {
+//     return (
+//       <View style={{ marginTop: 100, marginLeft: 100 }}>
+//         <Button onPress={() => this.props.navigation.goBack()}>
+//           <Text>Go back home</Text>
+//         </Button>
+//       </View>
+//     );
+//   }
+// }
 
 const MyDrawerNavigator = createDrawerNavigator({
-  MyHomeScreen,
-  MyNotificationsScreen
+  Home: MyHomeScreen,
+  Instagram
 });
 
 const MyApp = createAppContainer(MyDrawerNavigator);
@@ -69,6 +84,6 @@ class App extends React.Component {
       </Container>
     );
   }
-} //End of App class
+}
 
 export default App;
