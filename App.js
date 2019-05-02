@@ -42,19 +42,26 @@ class MyHomeScreen extends React.Component {
               alignSelf: "center"
             }}
           >
-            <Button onPress={() => this.props.navigation.navigate("Instagram")}>
+            <Button
+              style={{
+                width: 150,
+
+                justifyContent: "center"
+              }}
+              onPress={() => this.props.navigation.navigate("Instagram")}
+            >
               <Text>Instagram</Text>
             </Button>
 
             <Button
-              style={{ marginTop: 10 }}
+              style={{ marginTop: 10, width: 150, justifyContent: "center" }}
               onPress={() => this.props.navigation.navigate("Property Finder")}
             >
               <Text>Property Finder</Text>
             </Button>
 
             <Button
-              style={{ marginTop: 10 }}
+              style={{ marginTop: 10, width: 150, justifyContent: "center" }}
               onPress={() => this.props.navigation.navigate("Animation")}
             >
               <Text>Animation</Text>
