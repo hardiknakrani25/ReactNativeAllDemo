@@ -22,6 +22,7 @@ import Reg from "./src/LoginReg/navigator/navigation";
 import Todo from "./src/Todo/App";
 import ImageSlider from "./src/ImageSlider/app";
 import Redux from "./src/Redux/App";
+import ReduxCounter from "./src/Counter/src/Component/index";
 class MyHomeScreen extends React.Component {
   render() {
     return (
@@ -97,6 +98,13 @@ class MyHomeScreen extends React.Component {
             >
               <Text>Redux</Text>
             </Button>
+
+            <Button
+              style={{ marginTop: 10, width: 150, justifyContent: "center" }}
+              onPress={() => this.props.navigation.navigate("ReduxCounter")}
+            >
+              <Text>Redux Counter</Text>
+            </Button>
           </View>
         </Content>
       </Container>
@@ -112,7 +120,8 @@ const MyDrawerNavigator = createDrawerNavigator({
   Reg,
   Todo,
   "Image Slider": ImageSlider,
-  Redux
+  Redux,
+  ReduxCounter
 });
 
 const MyApp = createAppContainer(MyDrawerNavigator);
