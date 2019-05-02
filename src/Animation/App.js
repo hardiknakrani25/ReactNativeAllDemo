@@ -10,6 +10,15 @@ import {
 // import Ball from "./src/Ball";
 import Deck from "./src/Deck";
 import { Card, Button } from "react-native-elements";
+import {
+  Container,
+  Content,
+  Header,
+  Left,
+  Right,
+  Body,
+  Title
+} from "native-base";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -92,22 +101,27 @@ export default class App extends Component {
       </Card>
     );
   }
-
   render() {
     return (
       <SafeAreaView style={styles.container}>
         {/* <ScrollView> */}
-        <Deck
-          data={DATA}
-          renderCard={this.renderCard}
-          renderNoMoreCards={this.renderNoMoreCards}
-        />
+
+        <Container>
+          <Title>Card Deck Animation</Title>
+
+          <Content>
+            <Deck
+              data={DATA}
+              renderCard={this.renderCard}
+              renderNoMoreCards={this.renderNoMoreCards}
+            />
+          </Content>
+        </Container>
         {/* </ScrollView> */}
       </SafeAreaView>
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
