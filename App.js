@@ -14,8 +14,9 @@ import {
   Content
 } from "native-base";
 
+//import Apps
 import Instagram from "./src/Instagram/App";
-
+import Animation from "./src/Animation/App";
 class MyHomeScreen extends React.Component {
   render() {
     return (
@@ -46,9 +47,9 @@ class MyHomeScreen extends React.Component {
 
             <Button
               style={{ marginTop: 10 }}
-              onPress={() => this.props.navigation.navigate("Instagram")}
+              onPress={() => this.props.navigation.navigate("Animation")}
             >
-              <Text>Instagram</Text>
+              <Text>Animation</Text>
             </Button>
           </View>
         </Content>
@@ -57,21 +58,10 @@ class MyHomeScreen extends React.Component {
   }
 }
 
-// class MyNotificationsScreen extends React.Component {
-//   render() {
-//     return (
-//       <View style={{ marginTop: 100, marginLeft: 100 }}>
-//         <Button onPress={() => this.props.navigation.goBack()}>
-//           <Text>Go back home</Text>
-//         </Button>
-//       </View>
-//     );
-//   }
-// }
-
 const MyDrawerNavigator = createDrawerNavigator({
   Home: MyHomeScreen,
-  Instagram
+  Instagram,
+  Animation
 });
 
 const MyApp = createAppContainer(MyDrawerNavigator);
