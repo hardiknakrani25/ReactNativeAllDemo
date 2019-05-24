@@ -47,7 +47,7 @@ class MyHomeScreen extends React.Component {
               alignSelf: "center"
             }}
           >
-            <Button
+            {/* <Button
               style={{
                 width: 150,
 
@@ -56,7 +56,7 @@ class MyHomeScreen extends React.Component {
               onPress={() => this.props.navigation.navigate("Instagram")}
             >
               <Text>Instagram</Text>
-            </Button>
+            </Button> */}
 
             <Button
               style={{ marginTop: 10, width: 150, justifyContent: "center" }}
@@ -78,19 +78,19 @@ class MyHomeScreen extends React.Component {
             >
               <Text>Reg</Text>
             </Button>
-
+            {/* 
             <Button
               style={{ marginTop: 10, width: 150, justifyContent: "center" }}
               onPress={() => this.props.navigation.navigate("Todo")}
             >
               <Text>Todo</Text>
-            </Button>
-            <Button
+            </Button> */}
+            {/* <Button
               style={{ marginTop: 10, width: 150, justifyContent: "center" }}
               onPress={() => this.props.navigation.navigate("Image Slider")}
             >
               <Text>Image Slider</Text>
-            </Button>
+            </Button> */}
 
             <Button
               style={{ marginTop: 10, width: 150, justifyContent: "center" }}
@@ -99,12 +99,12 @@ class MyHomeScreen extends React.Component {
               <Text>Redux</Text>
             </Button>
 
-            <Button
+            {/* <Button
               style={{ marginTop: 10, width: 150, justifyContent: "center" }}
               onPress={() => this.props.navigation.navigate("ReduxCounter")}
             >
               <Text>Redux Counter</Text>
-            </Button>
+            </Button> */}
           </View>
         </Content>
       </Container>
@@ -114,14 +114,15 @@ class MyHomeScreen extends React.Component {
 
 const MyDrawerNavigator = createDrawerNavigator({
   Home: MyHomeScreen,
-  Instagram,
-  Animation,
+  // Instagram,
+
   "Property Finder": PropertyFinder,
+  Animation,
   Reg,
-  Todo,
-  "Image Slider": ImageSlider,
-  Redux,
-  ReduxCounter
+  // Todo,
+  // "Image Slider": ImageSlider,
+  Redux
+  // ReduxCounter
 });
 
 const MyApp = createAppContainer(MyDrawerNavigator);
