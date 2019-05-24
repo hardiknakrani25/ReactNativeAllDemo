@@ -29,7 +29,7 @@ export default class HomeTab extends Component {
             <Icon name={"camera"} style={{ padding: 10 }} />
           </Left>
           <Body style={[styles.androidHeaderTitle]}>
-            <Text style={{ fontWeight: "bold" }}>Instagram</Text>
+            <Text style={{ fontWeight: "bold", fontSize: 16 }}>Instagram</Text>
           </Body>
           <Right>
             <Icon name={"send"} style={{ padding: 10 }} />

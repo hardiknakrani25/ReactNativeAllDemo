@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { SafeAreaView, View } from "react-native";
+import { SafeAreaView, View ,Linking} from "react-native";
 import { Avatar, Image, Card, Button, Text, Icon } from "react-native-elements";
 
 export default class PropertyDetails extends Component {
@@ -9,6 +9,20 @@ export default class PropertyDetails extends Component {
     this.data = this.props.navigation.getParam("data", "X");
     console.log(this.data);
   }
+
+  onPressCallNow =()=>{
+
+      Linking.canOpenURL(`tel:+44${758625}`).then(supported => {
+          if (!supported) {
+              console.log('Can\'t handle url: ' + `tel:+44${758625}`);
+          } else {
+              return Linking.openURL(`tel:+44${758625}`);
+          }
+      }).catch(err => console.error('An error occurred', err));
+
+  }
+
+
   render() {
     return (
       <SafeAreaView style={{ backgroundColor: "#EEF7FC" }}>
@@ -58,6 +72,7 @@ export default class PropertyDetails extends Component {
           </View>
 
           <Button
+              onPress={this.onPressCallNow}
             icon={<Icon name="call" color="#ffffff" />}
             backgroundColor="#03A9F4"
             buttonStyle={{
@@ -67,6 +82,7 @@ export default class PropertyDetails extends Component {
               marginBottom: 0
             }}
             title="  CALL NOW"
+
           />
         </Card>
       </SafeAreaView>

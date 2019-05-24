@@ -8,7 +8,7 @@ import {
   View,
   Button,
   ActivityIndicator,
-  Image
+  Image,
 } from "react-native";
 
 function urlForQueryAndPage(key, value, pageNumber) {
@@ -59,6 +59,7 @@ export default class SearchPage extends React.Component {
 
   _executeQuery = query => {
     this.setState({ isLoading: true });
+    console.log("query",query)
     fetch(query)
       .then(response => response.json())
       .then(json => this._handleResponse(json.response))
@@ -84,15 +85,15 @@ export default class SearchPage extends React.Component {
         style={[styles.conatiner, { backgroundColor: "#E5F4E3", flex: 1 }]}
       >
         <Text style={styles.description}>Search house to buy!</Text>
-        <Text style={styles.description}>Search by place-name Of UK</Text>
+        <Text style={styles.description}>Search by place name Of UK</Text>
         <View style={styles.flowRight}>
           <TextInput
             style={styles.searchInput}
             value={this.state.searchString}
             onChange={this._onSearchTextChanged}
-            placeholder="Search via name or postcode"
+            placeholder="Search via name"
           />
-          <Button onPress={this._onSearchPressed} color="#48BBEC" title="Go" />
+          <Button  onPress={this._onSearchPressed} color="#48BBEC" title="Go" />
         </View>
         <View style={{ alignSelf: "center" }}>
           <Image
@@ -121,14 +122,14 @@ const styles = StyleSheet.create({
   flowRight: {
     flexDirection: "row",
     alignItems: "center",
-    alignSelf: "stretch"
+    alignSelf: "center"
   },
   searchInput: {
     height: 36,
     padding: 4,
     marginLeft: 10,
     marginRight: 5,
-    flexGrow: 1,
+      flex: 1,
     fontSize: 18,
     borderWidth: 1,
     borderColor: "#48BBEC",

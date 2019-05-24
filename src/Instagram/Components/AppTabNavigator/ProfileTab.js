@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  AsyncStorage,
   View,
   Text,
   Image,
@@ -17,8 +18,10 @@ import {
   Content,
   Button
 } from "native-base";
-import EntypoIcon from "react-native-vector-icons/Entypo";
 import CardComponent from "../CardComponent";
+import EntypoIcon from "react-native-vector-icons/Entypo";
+
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 export default class ProfileTab extends Component {
   images = [
@@ -50,6 +53,17 @@ export default class ProfileTab extends Component {
     this.state = {
       activeViewIndex: 0
     };
+  }
+
+  logout() {
+    (async () => {
+      try {
+        let res = await AsyncStorage.removeItem("@token");
+        if (res == null) {
+          this.props.navigation.navigate("Splash");
+        }
+      } catch (error) {}
+    })();
   }
 
   segmentClicked(index) {
@@ -108,12 +122,13 @@ export default class ProfileTab extends Component {
             <Icon name={"md-person-add"} style={{ padding: 10 }} />
           </Left>
           <Body style={[style.androidHeaderTitle]}>
-            <Text>USERNAME</Text>
+            <Text style={{ fontWeight: "bold", fontSize: 16 }}>Hardik</Text>
           </Body>
           <Right>
-            <EntypoIcon
-              name={"back-in-time"}
-              style={{ paddingRight: 10, fontSize: 30 }}
+            <AntDesign
+              name={"logout"}
+              style={{ paddingRight: 10, fontSize: 25 }}
+              onPress={() => this.logout()}
             />
           </Right>
         </Header>
@@ -185,9 +200,9 @@ export default class ProfileTab extends Component {
               </View>
             </View>
             <View style={{ paddingHorizontal: 10, paddingVertical: 10 }}>
-              <Text style={{ fontWeight: "bold" }}>username</Text>
+              <Text style={{ fontWeight: "bold" }}>Hardik</Text>
               <Text>Bio...</Text>
-              <Text>www.google.com</Text>
+              <Text>www.instagram.com</Text>
             </View>
           </View>
           <View>

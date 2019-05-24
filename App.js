@@ -47,7 +47,7 @@ class MyHomeScreen extends React.Component {
               alignSelf: "center"
             }}
           >
-            {/* <Button
+            <Button
               style={{
                 width: 150,
 
@@ -56,7 +56,7 @@ class MyHomeScreen extends React.Component {
               onPress={() => this.props.navigation.navigate("Instagram")}
             >
               <Text>Instagram</Text>
-            </Button> */}
+            </Button>
 
             <Button
               style={{ marginTop: 10, width: 150, justifyContent: "center" }}
@@ -72,12 +72,12 @@ class MyHomeScreen extends React.Component {
               <Text>Animation</Text>
             </Button>
 
-            <Button
+            {/* <Button
               style={{ marginTop: 10, width: 150, justifyContent: "center" }}
               onPress={() => this.props.navigation.navigate("Reg")}
             >
               <Text>Reg</Text>
-            </Button>
+            </Button> */}
             {/* 
             <Button
               style={{ marginTop: 10, width: 150, justifyContent: "center" }}
@@ -114,11 +114,11 @@ class MyHomeScreen extends React.Component {
 
 const MyDrawerNavigator = createDrawerNavigator({
   Home: MyHomeScreen,
-  // Instagram,
+  Instagram,
 
   "Property Finder": PropertyFinder,
   Animation,
-  Reg,
+  // Reg,
   // Todo,
   // "Image Slider": ImageSlider,
   Redux
